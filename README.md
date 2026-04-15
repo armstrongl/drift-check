@@ -48,6 +48,7 @@ node apps/drift-check/dist/index.js /path/to/repo
 | `--top <n>`     | Show only the top N drifted files                            | `20`        |
 | `--docs <glob>` | Glob restricting which files count as documentation          | auto-detect |
 | `--markdown`    | Output GitHub-flavoured Markdown (for Actions / PR comments) | off         |
+| `--rst`         | Output reStructuredText (Sphinx-compatible)                  | off         |
 | `--verify`      | Show OrdoMesh semantic scan prompt                           | off         |
 
 ---
@@ -63,6 +64,34 @@ drift-check . --docs "**/docs/*.md"
 
 # Markdown output — pipe to a GitHub Actions step summary or PR comment
 drift-check . --top 20 --markdown >> $GITHUB_STEP_SUMMARY
+
+# RST output — for Sphinx documentation or technical reports
+drift-check . --rst > drift_report.rst
+```
+
+---
+
+## Output Formats
+
+**Terminal (default)**  
+Colourful table with banner, optimised for interactive use and CI/CD logs.
+
+```bash
+drift-check .
+```
+
+**Markdown (`--markdown`)**  
+GitHub-flavoured Markdown, ideal for PR comments and GitHub Actions summaries.
+
+```bash
+drift-check . --markdown >> $GITHUB_STEP_SUMMARY
+```
+
+**reStructuredText (`--rst`)**  
+Sphinx-compatible RST format for integrating into technical documentation, knowledge bases, and report generation.
+
+```bash
+drift-check . --rst > drift_report.rst
 ```
 
 ---

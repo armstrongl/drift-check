@@ -3,6 +3,7 @@ import path from 'path'
 import { scanGitHistory, analyzeDrift } from '@ordomesh/drift-engine'
 import { formatBanner, formatTerminal } from './formatter.js'
 import { formatMarkdown } from './markdown.js'
+import { formatRst } from './rst.js'
 
 const program = new Command()
 
@@ -20,6 +21,7 @@ program
     '--markdown',
     'Output GitHub-flavoured Markdown (for Actions / PR comments)',
   )
+  .option('--rst', 'Output reStructuredText (Sphinx-compatible)')
   .action(
     async (
       repoArg: string,
@@ -27,15 +29,17 @@ program
         docs?: string
         top: string
         markdown?: boolean
+        rst?: boolean
       },
     ) => {
       const base = process.env.INIT_CWD ?? process.cwd()
       const repoPath = path.resolve(base, repoArg)
       const topN = Math.max(1, parseInt(options.top, 10) || 20)
       const isMarkdown = options.markdown ?? false
+      const isRst = options.rst ?? false
 
       try {
-        if (!isMarkdown) {
+        if (!isMarkdown && !isRst) {
           process.stdout.write(formatBanner())
           process.stdout.write('\nScanning git history…\n\n')
         }
@@ -48,6 +52,8 @@ program
 
         if (isMarkdown) {
           process.stdout.write(formatMarkdown(report, topN))
+        } else if (isRst) {
+          process.stdout.write(formatRst(report, topN))
         } else {
           process.stdout.write(formatTerminal(report, { topN }))
         }
