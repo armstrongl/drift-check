@@ -1,0 +1,32 @@
+/.turbo
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+
+
+# I like to be explicit with these
+apps/drift-check/dist
+apps/drift-check/node_modules
+
+packages/drift-engine/node_modules

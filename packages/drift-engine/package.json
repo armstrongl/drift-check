@@ -1,0 +1,19 @@
+{
+  "name": "@ordomesh/drift-engine",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "micromatch": "^4.0.8",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^24",
+    "typescript": "^5.9.3"
+  }
+}
