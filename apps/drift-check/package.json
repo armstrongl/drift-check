@@ -1,6 +1,6 @@
 {
   "name": "@ordomesh/drift-check",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Detect documentation drift in a Git repository",
   "bin": {
     "drift-check": "./dist/index.js"
@@ -18,7 +18,7 @@
     "url": "git@github.com:Trollmoj/drift-check.git",
     "directory": "apps/drift-check"
   },
-  "homepage": "https://github.com/Trollmoj/drift-check#readme",
+  "homepage": "https://ordomesh.com/drift-check",
   "bugs": {
     "url": "https://github.com/Trollmoj/drift-check/issues"
   },

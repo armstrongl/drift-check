@@ -1,7 +1,9 @@
 {
   "name": "drift-check-monorepo",
-  "version": "0.3.0",
-  "private": true,  "license": "MIT",  "description": "Monorepo for drift-check tool",
+  "version": "0.4.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Monorepo for drift-check tool",
   "workspaces": [
     "apps/*",
     "packages/*"
