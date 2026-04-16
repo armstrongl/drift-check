@@ -49,7 +49,6 @@ node apps/drift-check/dist/index.js /path/to/repo
 | `--docs <glob>` | Glob restricting which files count as documentation          | auto-detect |
 | `--markdown`    | Output GitHub-flavoured Markdown (for Actions / PR comments) | off         |
 | `--rst`         | Output reStructuredText (Sphinx-compatible)                  | off         |
-| `--verify`      | Show OrdoMesh semantic scan prompt                           | off         |
 
 ---
 

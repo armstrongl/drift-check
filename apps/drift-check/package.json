@@ -1,6 +1,6 @@
 {
   "name": "@ordomesh/drift-check",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Detect documentation drift in a Git repository",
   "bin": {
     "drift-check": "./dist/index.js"
@@ -12,6 +12,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:Trollmoj/drift-check.git",
